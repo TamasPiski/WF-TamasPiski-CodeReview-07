@@ -1,0 +1,36 @@
+#box {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+
+        #firstpost {
+            width:40%;            
+            background-color: cornflowerblue;
+
+            h1 {
+                font-size: 1.2em;
+                margin-left: 1em;
+            }
+
+            p {
+                margin-left: 1em;
+                font-style: italic;
+            }
+        }
+
+        #secondpost {
+            width:40%;            
+            background-color: cornflowerblue;
+
+            h1 {
+                font-size: 1.2em;
+                margin-left: 1em;
+            }
+
+            p {
+                margin-left: 1em;
+                font-style: italic;
+            }
+
+        }
+}

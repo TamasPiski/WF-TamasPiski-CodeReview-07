@@ -1,0 +1,33 @@
+ .container {
+
+    width: 120%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    justify-items: center;
+    background-color: black;
+    padding: 1em;
+    margin-top: 2em;
+
+    #footleft {
+        p {
+            color: white;
+            font-size: 2em;
+            font-weight: bold;
+            padding: 0.25em;
+            margin-left: 1em;
+            border: 1px solid white;
+        }
+    }
+
+    #footright {
+        p {
+            color: white;
+            font-size: 2em;
+            font-weight: bold;
+            padding: 0.25em;
+            margin-right: 1em;
+            border: 1px solid white;
+        }
+    }
+}
