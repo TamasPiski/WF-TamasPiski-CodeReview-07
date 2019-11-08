@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { ReactiveFormsModule } from "@angular/forms";
+import { ReactiveFormsModule ,FormsModule} from "@angular/forms" ;
 import { CustomerService } from "./shared/customer.service";
 
 import { AppRoutingModule } from './app-routing.module';
@@ -40,7 +40,8 @@ import { CustomerListComponent } from './customer-list/customer-list.component';
     AppRoutingModule,
     ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),// we called initializeApp function to provide connection details
-    AngularFireDatabaseModule // we will import the classes here too
+    AngularFireDatabaseModule, // we will import the classes here too
+    FormsModule
   ],
   providers: [CustomerService],
   bootstrap: [AppComponent]

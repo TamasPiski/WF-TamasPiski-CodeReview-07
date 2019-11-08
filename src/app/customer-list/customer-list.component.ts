@@ -9,6 +9,7 @@ import { CustomerService } from "../shared/customer.service";
 export class CustomerListComponent implements OnInit {
   customerArray =[];
   showDeletedMessage : boolean;
+  searchText:string = "";
   constructor(private customerService: CustomerService) { }
 
   ngOnInit() {
@@ -32,4 +33,9 @@ export class CustomerListComponent implements OnInit {
     }
   }
   
+  filterCondition(customer){
+    return customer.fullName.toLowerCase().indexOf(this.searchText.toLowerCase()) != -1 ;
+  }
+
+
 }
