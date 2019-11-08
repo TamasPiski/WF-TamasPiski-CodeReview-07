@@ -11,18 +11,24 @@ export class CustomerComponent implements OnInit {
 constructor(private customerService: CustomerService) { }
   submitted: boolean;
   formControls = this.customerService.form.controls;
+  showSuccessMessage: boolean;
   
   ngOnInit() {
   }
 
   
   onSubmit(){
-    // here we said that if the value of the hidden input is null and it's by default null we will insert a new customer and when the $key value is not null we will update an existing data
-            if(this.customerService.form.get("$key").value == null ){
-                    // insert
-            } else {
-                    //update
-            }
+    this.submitted = true;
+    if(this.customerService.form.valid){
+            if(this.customerService.form.get("$key").value == null ){                    this.customerService.insertCustomer(this.customerService.form.value);
+        this.showSuccessMessage =true;// we set the property to true
+        setTimeout(()=> this.showSuccessMessage=false,3000); // we used setTimeout here so after 3 second the showSuccessMessage value will be false
+        this.submitted = false;
+        this.customerService.form.reset();// the form will be empty after new record created
+          } else {
+                  //update
+          }
     }
+  }
 
 }
