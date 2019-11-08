@@ -32,4 +32,23 @@ export class CustomerService {
             location:customer.location
      });
   }
+
+  
+  populateForm(customer){
+    this.form.setValue(customer);
+  }
+
+  updateCustomer(customer){
+    this.customerList.update(customer.$key,{
+       fullName:  customer.fullName,
+        email: customer.email,
+        mobile: customer.mobile,
+        location:customer.location
+    });
+  }
+  
+  
+  deleteCustomer($key: string){
+    this.customerList.remove($key);
+  }
 }

@@ -26,7 +26,11 @@ constructor(private customerService: CustomerService) { }
         this.submitted = false;
         this.customerService.form.reset();// the form will be empty after new record created
           } else {
-                  //update
+            this.customerService.updateCustomer(this.customerService.form.value);
+            this .showSuccessMessage = true;
+            setTimeout(()=> this.showSuccessMessage=false ,3000);
+            this.submitted = false;
+            this.customerService.form.reset();
           }
     }
   }
